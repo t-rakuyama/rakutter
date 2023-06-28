@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended', // ESLintの推奨ルール
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'prettier', // 他と競合するルールを上書くために最後に記述する
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
