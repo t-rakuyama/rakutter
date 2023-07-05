@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true, // windowなどのグローバル変数が認識される
+    "es2022": true // ES2022までに導入されたグローバル変数が認識される
+  },
+  "parserOptions": {
+    "ecmaVersion": 13, // JSがどの構文を使っているかをESLintに伝える
+    "sourceType": "module" // import/exportをサポートさせる
+  },
+  "extends": [
+    "eslint:recommended" // ESLintの推奨ルール
+  ]
+}
