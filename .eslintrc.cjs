@@ -5,8 +5,7 @@ module.exports = {
     "es2022": true // ES2022までに導入されたグローバル変数が認識される
   },
   extends: [
-    "eslint:recommended", // ESLintの推奨ルール
-    "plugin:react/recommended", // Reactの推奨ルール
+    'eslint:recommended', // ESLintの推奨ルール
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
   ],
