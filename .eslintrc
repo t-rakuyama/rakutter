@@ -8,6 +8,7 @@
     "sourceType": "module" // import/exportをサポートさせる
   },
   "extends": [
-    "eslint:recommended" // ESLintの推奨ルール
+    "eslint:recommended", // ESLintの推奨ルール
+    "plugin:react/recommended" // Reactの推奨ルール
   ]
 }
