@@ -37,7 +37,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --report-unused-disable-directives --max-warnings 0"
+      "eslint --report-unused-disable-directives --max-warnings 0",
+      "prettier --loglevel=error"
     ],
     "*.{ts,tsx}": [
       "bash -c tsc --noEmit"
