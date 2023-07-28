@@ -1,0 +1,32 @@
+name: lintCI
+
+on:
+  push:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.x
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: lint
+        run: npm run lint
