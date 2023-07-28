@@ -27,6 +27,7 @@ module.exports = {
     'import/order': [
       'warn',
       {
+        'newlines-between': 'always',
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
