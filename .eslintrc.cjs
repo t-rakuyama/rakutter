@@ -7,6 +7,8 @@ module.exports = {
   extends: [
     'eslint:recommended', // ESLintの推奨ルール
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended', // Reactの推奨ルール
+    'plugin:react/jsx-runtime', // React17からJSXを使う場合のルール
     'plugin:react-hooks/recommended',
     'prettier', // 他と競合するルールを上書くために最後に記述する
   ],
