@@ -25,4 +25,9 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  settings: {
+    react: {
+      version: 'detect', // Reactのバージョンを自動検出する
+    },
+  },
 }
