@@ -1,0 +1,28 @@
+name: lgtmCatAction
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  approved:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post Cat
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const params = {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number : context.payload.pull_request.number,
+              body: "![lgtmCat](https://github.com/t-rakuyama/rakutter/assets/109523717/426696de-4242-42f9-8b50-cc6127ae3bf1)"
+            }
+            await github.rest.issues.createComment(params)
