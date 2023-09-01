@@ -3,5 +3,9 @@
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  // deno settings
+  "deno.enablePaths": ["./api/src"],
+  "deno.enable": true,
+  "deno.lint": true
 }
