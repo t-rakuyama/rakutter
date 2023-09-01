@@ -9,7 +9,7 @@ services:
       - node_modules:/usr/src/app/node_modules # 名前付きボリュームからマウント
     command: sh -c "npm run dev -- --host"
     ports:
-      - "${APP_PORT:-3000}:5173"
+      - '${APP_PORT:-3000}:5173'
     stdin_open: true
     tty: true
 
