@@ -12,6 +12,20 @@ services:
       - '${APP_PORT:-3000}:5173'
     stdin_open: true
     tty: true
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.1.0
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rakutter
 
 volumes:
   node_modules:
+  mysql_data:
