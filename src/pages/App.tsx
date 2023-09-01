@@ -1,24 +1,13 @@
-import { useState } from 'react'
-
 import { Footer } from '~/components/Footer'
 import { Header } from '~/components/Header'
-
+import { PostList } from '~/components/PostList'
 import '~/assets/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Header />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+      <PostList />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
