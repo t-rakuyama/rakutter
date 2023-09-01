@@ -10,8 +10,18 @@ services:
     command: sh -c "npm run dev -- --host"
     ports:
       - '${APP_PORT:-3000}:5173'
-    stdin_open: true
-    tty: true
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    volumes:
+      - ./api/:/app
+    command: deno run --allow-net ./src/main.ts
+    ports:
+      - '${API_PORT:-8000}:8000'
 
 volumes:
   node_modules:
