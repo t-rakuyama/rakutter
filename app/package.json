@@ -38,7 +38,7 @@
     "vite": "^4.4.5"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run lint-staged"
+    "pre-commit": "if [[ \"$(git diff --diff-filter=d --staged --name-only)\" =~ ^app/* ]]; then cd app/ && npm run lint-staged; fi"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
