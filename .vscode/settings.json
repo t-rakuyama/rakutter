@@ -5,7 +5,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   // deno settings
-  "deno.enablePaths": ["./api/src"],
+  "deno.enablePaths": ["./api"],
   "deno.enable": true,
-  "deno.lint": true
+  "deno.lint": true,
+  "deno.config": "./api/deno.json"
 }
