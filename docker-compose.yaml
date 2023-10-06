@@ -1,6 +1,7 @@
 version: '3.9'
 services:
-  react-app:
+  app:
+    container_name: rakutter_app
     build:
       context: .
       dockerfile: web.Dockerfile
@@ -16,6 +17,7 @@ services:
       - db
 
   db:
+    container_name: rakutter_db
     image: mysql:8.1.0
     restart: always
     ports:
