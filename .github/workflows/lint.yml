@@ -11,6 +11,9 @@ jobs:
   check-lint:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ./app
 
     steps:
       - name: Checkout repository
@@ -21,6 +24,7 @@ jobs:
         with:
           node-version: 18.16.x
           cache: npm
+          cache-dependency-path: ./app/package-lock.json
 
       - name: install
         run: npm ci
