@@ -21,7 +21,7 @@ services:
       dockerfile: api/Dockerfile
     volumes:
       - ./api/:/app
-    command: deno run --allow-net ./src/main.ts
+    command: deno task start
     ports:
       - "${API_PORT:-8000}:8000"
     depends_on:
