@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 services:
   app:
     container_name: rakutter_app
@@ -10,9 +10,20 @@ services:
       - node_modules:/usr/src/app/node_modules # 名前付きボリュームからマウント
     command: sh -c "npm run dev -- --host"
     ports:
-      - '${APP_PORT:-3000}:5173'
-    stdin_open: true
-    tty: true
+      - "${APP_PORT:-3000}:5173"
+    depends_on:
+      - api
+      - db
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    volumes:
+      - ./api/:/app
+    command: deno run --allow-net ./src/main.ts
+    ports:
+      - "${API_PORT:-8000}:8000"
     depends_on:
       - db
 
