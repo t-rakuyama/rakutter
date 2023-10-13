@@ -4,7 +4,7 @@ services:
     container_name: rakutter_app
     build:
       context: .
-      dockerfile: web.Dockerfile
+      dockerfile: app/web.Dockerfile
     volumes:
       - ./app/:/usr/src/app # ローカルをコンテナ内にマウント
       - node_modules:/usr/src/app/node_modules # 名前付きボリュームからマウント
