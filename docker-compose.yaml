@@ -2,9 +2,9 @@ version: "3.9"
 services:
   app:
     container_name: rakutter_app
+    image: rakutter-app:latest
     build:
-      context: .
-      dockerfile: web.Dockerfile
+      context: ./app
     volumes:
       - ./app/:/usr/src/app # ローカルをコンテナ内にマウント
       - node_modules:/usr/src/app/node_modules # 名前付きボリュームからマウント
@@ -16,9 +16,9 @@ services:
       - db
 
   api:
+    image: rakutter-api:latest
     build:
-      context: .
-      dockerfile: api/Dockerfile
+      context: ./api
     volumes:
       - ./api/:/app
     command: deno run --allow-net ./src/main.ts
