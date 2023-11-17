@@ -1,12 +1,10 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
   // deno settings
-  "deno.enablePaths": ["./api"],
-  "deno.enable": true,
   "deno.lint": true,
+  "deno.enable": true,
+  "deno.enablePaths": ["./api"],
   "deno.config": "./api/deno.jsonc"
 }
