@@ -6,7 +6,8 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "fmt": "deno fmt"
+    "format:fix": "deno fmt",
+    "format:check": "deno fmt --check"
   },
   "lint": {
     "rules": {
