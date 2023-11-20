@@ -8,7 +8,8 @@ defaults:
     shell: bash
 
 jobs:
-  check-lint:
+  app-check-lint:
+    name: app/check-lint
     runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
