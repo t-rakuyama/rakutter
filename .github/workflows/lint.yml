@@ -35,3 +35,22 @@ jobs:
 
       - name: lint
         run: npm run lint
+  api-check-lint:
+    name: api/check-lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ./api
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: 1.15.3
+
+      - name: lint
+        run: deno lint
