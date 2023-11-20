@@ -28,4 +28,5 @@ module.exports = {
       version: 'detect', // Reactのバージョンを自動検出する
     },
   },
+  reportUnusedDisableDirectives: true,
 }
