@@ -8,5 +8,5 @@
   "deno.enablePaths": ["./api"],
   "deno.enable": true,
   "deno.lint": true,
-  "deno.config": "./api/deno.json"
+  "deno.config": "./api/deno.jsonc"
 }
