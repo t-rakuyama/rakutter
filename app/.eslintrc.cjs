@@ -18,19 +18,9 @@ module.exports = {
     ecmaVersion: 13, // JSがどの構文を使っているかをESLintに伝える
     sourceType: 'module', // import/exportをサポートさせる
   },
-  plugins: ['import', 'react-refresh'],
+  plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    'import/order': [
-      'warn',
-      {
-        'newlines-between': 'always',
-        alphabetize: { order: 'asc', caseInsensitive: true },
-      },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
   settings: {
     react: {
