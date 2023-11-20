@@ -5,23 +5,18 @@
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
-    "update": "deno run -A -r https://fresh.deno.dev/update ."
+    "update": "deno run -A -r https://fresh.deno.dev/update .",
+    "format:fix": "npx prettier --write .",
+    "format:check": "npx prettier --check ."
   },
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"]
     },
-    "exclude": [
-      "_fresh"
-    ]
+    "exclude": ["_fresh"]
   },
   "fmt": {
-    "exclude": [
-      "_fresh"
-    ]
+    "exclude": ["_fresh"]
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.4.3/",
