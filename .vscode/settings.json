@@ -1,8 +1,12 @@
 {
   "editor.formatOnSave": true,
+  /* app側の開発を行う場合はこちらのコメントアウトを外します */
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  // deno settings
+  /* api側の開発を行う場合はこちらのコメントアウトを外します */
+  // "editor.defaultFormatter": "denoland.vscode-deno",
+
+  /* deno settings */
   "deno.lint": true,
   "deno.enable": true,
   "deno.enablePaths": ["./api"],
