@@ -1,9 +1,33 @@
 import { Post } from './Post'
 
-export const PostList = () => (
+export type TPost = {
+  userName: string
+  userIcon: string
+  text: string
+}
+
+const TEST: TPost[] = [
+  {
+    userName: '見本一郎',
+    userIcon: '一',
+    text: '財布おとした',
+  },
+  {
+    userName: '見本二郎',
+    userIcon: '二',
+    text: '財布拾った',
+  },
+]
+
+export const PostList: React.FC = () => (
   <ul>
-    {[...Array(20)].map((i) => (
-      <Post key={i} />
+    {TEST.map((post, index) => (
+      <Post
+        key={index}
+        userName={post.userName}
+        userIcon={post.userIcon}
+        text={post.text}
+      />
     ))}
   </ul>
 )
