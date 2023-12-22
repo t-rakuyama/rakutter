@@ -1,0 +1,64 @@
+name: AppLintCI
+
+on:
+  push:
+    paths:
+      - "app/**/*"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    name: app/lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.x
+          cache: npm
+          cache-dependency-path: ./app/package-lock.json
+
+      - name: install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: lint
+        run: npm run lint:check
+
+  format:
+    name: app/format
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.x
+          cache: npm
+          cache-dependency-path: ./app/package-lock.json
+
+      - name: install
+        run: npm ci
+
+      - name: format
+        run: npm run format:check
