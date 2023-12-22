@@ -1,5 +1,5 @@
-import { Post } from '../domain/post/entities/Post.ts'
-import { PostRepository } from '../infrastructure/repositories/PostRepository.ts'
+import { Post } from '../entities/Post.ts'
+import { PostRepositoryInterface } from '../repositories/PostRepositoryInterface.ts'
 
 export type PostResponse = {
   id: string
@@ -12,11 +12,14 @@ export type PostResponse = {
  * 投稿のAPI返却用サービス
  */
 export class PostResponseService {
+  constructor(private postRepository: PostRepositoryInterface) {
+  }
+
   /**
    * API返却用の投稿一覧を取得する
    */
   public async findAll(): Promise<PostResponse[]> {
-    const posts = await new PostRepository().findAll()
+    const posts = await this.postRepository.findAll()
     return posts.map((post) => this.convertResponse(post))
   }
 
@@ -25,10 +28,10 @@ export class PostResponseService {
    */
   private convertResponse(post: Post): PostResponse {
     return {
-      id: post.getId(),
-      text: post.getText().getValue(),
-      createdAt: post.getCreatedAt(),
-      updatedAt: post.getUpdatedAt(),
+      id: post.id,
+      text: post.text.value,
+      createdAt: post.createdAt,
+      updatedAt: post.updatedAt,
     }
   }
 }
