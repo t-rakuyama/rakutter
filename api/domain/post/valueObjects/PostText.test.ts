@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  assertThrows,
-} from 'https://deno.land/std@0.65.0/testing/asserts.ts'
+import { assertEquals, assertThrows } from 'https://deno.land/std@0.65.0/testing/asserts.ts'
 
 import { PostText } from './PostText.ts'
 
@@ -18,5 +15,5 @@ Deno.test('256文字以下の投稿文章はエラーにならずに取得でき
   const value = 'a'.repeat(256)
   const postText = new PostText(value)
 
-  assertEquals(postText.getValue(), value)
+  assertEquals(postText.value, value)
 })
