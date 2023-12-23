@@ -1,5 +1,6 @@
 import { HandlerContext, Handlers } from '$fresh/server.ts'
-import { PostResponseService } from '../../../application/PostResponseService.ts'
+import { PostResponseService } from '../../../domain/post/services/PostResponseService.ts'
+import { PostRepository } from '../../../infrastructure/repositories/PostRepository.ts'
 
 export const handler: Handlers = {
   GET: async (req: Request, ctx: HandlerContext): Promise<Response> => {
@@ -14,6 +15,9 @@ const index = async (
   _req: Request,
   _ctx: HandlerContext,
 ): Promise<Response> => {
-  const response = await new PostResponseService().findAll()
+  // TODO DIモジュールを用いてプレゼンテーションがインフラストラクチャに依存しないようにする
+  const postRepository = new PostRepository()
+
+  const response = await new PostResponseService(postRepository).findAll()
   return new Response(JSON.stringify(response))
 }
