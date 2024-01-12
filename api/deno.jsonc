@@ -10,17 +10,12 @@
   },
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"]
     },
-    "exclude": [
-      "_fresh"
-    ]
+    "exclude": ["_fresh"]
   },
   "fmt": {
-    "exclude": ["_fresh"],
+    "exclude": ["_fresh", "fresh.gen.ts", "**/*.md"],
     "lineWidth": 100,
     "semiColons": false,
     "singleQuote": true
