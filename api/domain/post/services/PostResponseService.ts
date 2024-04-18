@@ -1,5 +1,5 @@
-import { Post } from '../entities/Post.ts'
-import { PostRepositoryInterface } from '../repositories/PostRepositoryInterface.ts'
+import { Post } from "../entities/Post.ts"
+import { PostRepositoryInterface } from "../repositories/PostRepositoryInterface.ts"
 
 export type PostResponse = {
   id: string

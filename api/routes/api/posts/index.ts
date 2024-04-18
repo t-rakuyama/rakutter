@@ -1,6 +1,6 @@
-import { HandlerContext, Handlers } from '$fresh/server.ts'
-import { PostResponseService } from '../../../domain/post/services/PostResponseService.ts'
-import { PostRepository } from '../../../infrastructure/repositories/PostRepository.ts'
+import { HandlerContext, Handlers } from "$fresh/server.ts"
+import { PostResponseService } from "../../../domain/post/services/PostResponseService.ts"
+import { PostRepository } from "../../../infrastructure/repositories/PostRepository.ts"
 
 export const handler: Handlers = {
   GET: async (req: Request, ctx: HandlerContext): Promise<Response> => {
