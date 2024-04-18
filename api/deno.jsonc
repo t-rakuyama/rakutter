@@ -19,7 +19,7 @@
     "exclude": ["_fresh", "fresh.gen.ts", "**/*.md"],
     "lineWidth": 100,
     "semiColons": false,
-    "singleQuote": true
+    "singleQuote": false
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.4.3/",
