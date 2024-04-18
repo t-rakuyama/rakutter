@@ -22,12 +22,7 @@ const TEST: TPost[] = [
 export const PostList: React.FC = () => (
   <ul>
     {TEST.map((post, index) => (
-      <Post
-        key={index}
-        userName={post.userName}
-        userIcon={post.userIcon}
-        text={post.text}
-      />
+      <Post key={index} userName={post.userName} userIcon={post.userIcon} text={post.text} />
     ))}
   </ul>
 )
