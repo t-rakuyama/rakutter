@@ -1,4 +1,4 @@
-import { PostText } from '../valueObjects/PostText.ts'
+import { PostText } from "../valueObjects/PostText.ts"
 
 /**
  * 投稿

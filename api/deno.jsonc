@@ -6,7 +6,8 @@
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "fmt": "deno fmt"
+    "format:fix": "deno fmt",
+    "format:check": "deno fmt --check"
   },
   "lint": {
     "rules": {
@@ -18,7 +19,7 @@
     "exclude": ["_fresh", "fresh.gen.ts", "**/*.md"],
     "lineWidth": 100,
     "semiColons": false,
-    "singleQuote": true
+    "singleQuote": false
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.4.3/",

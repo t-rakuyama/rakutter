@@ -1,4 +1,4 @@
-import { Post } from '../entities/Post.ts'
+import { Post } from "../entities/Post.ts"
 
 /**
  * 投稿のリポジトリインタフェース

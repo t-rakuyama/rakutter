@@ -15,7 +15,7 @@ const docs = () => {
         </dl>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default docs;
+export default docs
