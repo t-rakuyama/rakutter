@@ -2,45 +2,43 @@
   "name": "rakutter",
   "private": true,
   "version": "0.1.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint:fix": "eslint --ext ts,tsx --fix --max-warnings 0 src",
-    "lint:check": "eslint --ext ts,tsx --max-warnings 0 'src'",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:fix": "next lint --ext ts,tsx --fix --max-warnings 0 src",
+    "lint:check": "next lint --ext ts,tsx --max-warnings 0 'src'",
     "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,json}'",
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,json}'",
-    "preview": "vite preview",
+    "tsc": "tsc",
+    "tsc-check": "tsc --noEmit --incremental false",
     "lint-staged": "lint-staged",
     "prepare": "simple-git-hooks > /dev/null"
   },
   "dependencies": {
+    "next": "14.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "18.17.19",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
+    "eslint-config-next": "^14.0.4",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-react": "^7.33.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
     "lint-staged": "^13.2.3",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-organize-imports": "^3.2.4",
     "simple-git-hooks": "^2.8.1",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "typescript": "^5.0.2"
   },
   "simple-git-hooks": {
-    "pre-commit": "if [[ \"$(git diff --diff-filter=d --staged --name-only)\" =~ ^app/* ]]; then cd app/ && npm run lint-staged; fi"
+    "pre-commit": "bash -c 'if [[ \"$(git diff --diff-filter=d --staged --name-only)\" =~ ^app/* ]]; then cd app/ && npm run lint-staged; fi'"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -48,7 +46,7 @@
       "prettier --loglevel=error"
     ],
     "*.{ts,tsx}": [
-      "bash -c tsc --noEmit"
+      "tsc-check"
     ]
   }
 }
