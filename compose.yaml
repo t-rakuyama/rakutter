@@ -1,16 +1,15 @@
-version: "3.9"
 services:
   app:
     container_name: rakutter_app
-    image: rakutter-app:latest
     build:
       context: ./app
+      dockerfile: ./Dockerfile
     volumes:
-      - ./app/:/usr/src/app # ローカルをコンテナ内にマウント
-      - node_modules:/usr/src/app/node_modules # 名前付きボリュームからマウント
-    command: sh -c "npm run dev -- --host"
+      - ./app/:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: ["npm", "run", "dev"]
     ports:
-      - "${APP_PORT:-3000}:5173"
+      - 3000:3000
     depends_on:
       - api
       - db
