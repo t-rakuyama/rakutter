@@ -1,28 +1,14 @@
 import { Post } from './Post'
+import { Post as TPost } from './../../types/post'
 
-export type TPost = {
-  userName: string
-  userIcon: string
-  text: string
+type Props = {
+  posts: TPost[]
 }
 
-const TEST: TPost[] = [
-  {
-    userName: '見本一郎',
-    userIcon: '一',
-    text: '財布おとした',
-  },
-  {
-    userName: '見本二郎',
-    userIcon: '二',
-    text: '財布拾った',
-  },
-]
-
-export const PostList: React.FC = () => (
+export const PostList: React.FC<Props> = ({posts}) => (
   <ul>
-    {TEST.map((post, index) => (
-      <Post key={index} userName={post.userName} userIcon={post.userIcon} text={post.text} />
+    {posts.map((post, index) => (
+      <Post key={index} userName={post.postedUser.name} userIcon={post.postedUser.icon} text={post.text} />
     ))}
   </ul>
 )
