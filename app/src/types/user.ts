@@ -1,4 +1,4 @@
 export type User = {
-    name: string,
-    icon: string,
+  name: string
+  icon: string
 }

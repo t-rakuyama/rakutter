@@ -1,20 +1,19 @@
-"use client"
+'use client'
 
 import { useEffect, useState } from 'react'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { PostList } from '../components/PostList'
-import { Post } from '../types';
-
+import { Post } from '../types'
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([])
   console.log('hoge')
-  
+
   useEffect(() => {
-    (async() => {
-      const response = await fetch('/api');
-      const data = await response.json();
+    ;(async () => {
+      const response = await fetch('/api')
+      const data = await response.json()
       setPosts(data.posts)
     })()
   }, [])
