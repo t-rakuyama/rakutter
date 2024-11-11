@@ -2,12 +2,12 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/_404.tsx";
-import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/api/docs.tsx";
-import * as $3 from "./routes/api/joke.ts";
-import * as $4 from "./routes/api/posts/index.ts";
-import * as $5 from "./routes/index.tsx";
+import * as $0 from "./routes/_404.tsx"
+import * as $1 from "./routes/_app.tsx"
+import * as $2 from "./routes/api/docs.tsx"
+import * as $3 from "./routes/api/joke.ts"
+import * as $4 from "./routes/api/posts/index.ts"
+import * as $5 from "./routes/index.tsx"
 
 const manifest = {
   routes: {
@@ -20,6 +20,6 @@ const manifest = {
   },
   islands: {},
   baseUrl: import.meta.url,
-};
+}
 
-export default manifest;
+export default manifest
